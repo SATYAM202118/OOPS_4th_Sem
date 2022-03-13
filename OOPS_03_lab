@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+
+double power(double m, int n=2){
+	double ans = 1;
+	for(int i = 1; i <= n; i++)
+		ans = ans * m;
+	return ans;
+}
+
+int main(){                 //SATYAM ARYA (202118)
+	int p;
+	double n;
+	cout << "Enter the number : ";
+	cin >> n;
+	cout << "Enter the exponent : ";
+	cin >> p;
+	cout << "Answer is " << power(n,p)<<endl;
+	cout << "Answer without passing exponent is " << power(n);
+	return 0;
+}
