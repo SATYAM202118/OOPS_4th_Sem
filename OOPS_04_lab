@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+class Power{ 
+    public: 
+    int ans=1; 
+    int Sqaurework(int m,int n){ 
+        for(int i=1;i<=n;i++){ 
+            ans=ans*m; 
+            }
+       display(); 
+       return 0; 
+        }                              //SATYAM ARYA(202118)
+    int square(int m, int n){ 
+        Sqaurework(m,n);
+        return 0; 
+        }
+    int square(int m){
+        const int n=2;
+        Sqaurework(m,n);
+        return 0;
+        } 
+    void display(){ 
+        cout<<"Answer is : "<<ans<<endl; 
+        }
+};
+
+int main(){
+    Power X; 
+    int num1,num2;
+    cout<<"Enter first number : "<<endl;
+    cin>> num1;
+    cout<<"Enter second number : "<<endl;
+    cin>>num2;
+
+    // Both are not run at same time
+    
+    X.square(num1); 
+    // X.square(num1,num2);
+    return 0;
+    }
