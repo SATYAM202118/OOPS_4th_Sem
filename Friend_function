@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+class TIME
+{
+private:
+    int hr;
+    int min;
+    // Friend function to add
+    friend TIME add(TIME, TIME);
+public:
+    TIME(int h=0, int m=0){
+        hr=h;
+        min=m;
+    }
+    void display(){
+        cout<<"Hours = "<<hr<<" and minutes = "<<min<<endl;
+    }
+};
+TIME add(TIME t1, TIME t2){
+    TIME temp;
+    temp.hr = t1.hr + t2.hr;
+    temp.min = t1.min + t2.min;
+    if(temp.min >= 60){
+        temp.hr += temp.min/60;
+        temp.min = temp.min%60;
+    }
+    return temp;
+}
+int main(){
+    TIME t1(2, 40);
+    TIME t2(8,30);
+    TIME t3;
+    t1.display();
+    t2.display();
+    t3 = add(t1,t2);
+    t3.display();
+    return 0;
+}
