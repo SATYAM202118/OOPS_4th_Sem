@@ -1,0 +1,26 @@
+//Program to overload unary operator.
+#include <iostream>
+using namespace std;
+class Unary{
+private:
+    int n;
+public:
+    Unary() : n(7) {}      // Initialize n to 7 
+    void operator++(){     //Overload when prefix
+        ++n;
+    }
+    void operator++(int){      // Overload when postfix
+        n++;
+    }
+    void print(){
+        cout << "Number is : " << n << endl;
+    }
+};
+int main(){
+    Unary u1;
+    u1++;       //Calling the posting operator
+    u1.print();
+    ++u1;   //Calling the prefix operator
+    u1.print();
+    return 0;
+}
