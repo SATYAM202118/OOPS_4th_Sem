@@ -1,0 +1,38 @@
+// Binary operator overloading
+#include <iostream>
+using namespace std;
+class Binary_complex{
+   private:
+    float r, i;     //r is real and i is imaginary
+   public:
+    Binary_complex() : r(0), i(0) {}
+    Binary_complex operator +(const Binary_complex& ob) {
+        Binary_complex temp;
+        temp.r = r + ob.r;
+        temp.i = i + ob.i;
+        return temp;
+    }
+    void get_val() {
+        cout << "Enter real and imaginary parts respectively: "<<endl;
+        cin >> r >> i ;
+    }
+    void display() {
+        if (i < 0)
+            cout << "Complex number is: " << r << i << "i";
+        else
+            cout << "Complex number is: " << r << "+" << i << "i";
+    }
+};
+int main() {
+    Binary_complex c1,c2, result;
+
+    cout << "Enter the first complex number: "<<endl;
+    c1.get_val();
+
+    cout << "Enter the second complex number: "<<endl;
+    c2.get_val();
+
+    result = c1 + c2;
+    result.display();
+return 0;
+}
