@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+class DB;
+class DM{
+    float m;
+    float cm;
+    friend void add(DM, DB);
+    public:
+    void get_DM(void){
+        cout<<"Please Enter the distance in meter and centimeter : "<<endl;
+        cin>>m>>cm;
+    }
+    void print_DM(void){
+        cout<<"Meters = "<<m<<endl;
+        cout<<"Centimeter = "<<cm<<endl;
+    }
+};
+class DB{
+    float feet, inch;
+    friend void add(DM, DB);
+    public:
+    void get_DB(void){
+        cout<<"Please Entre the distance in feet and inche : "<<endl;
+        cin>>feet>>inch;
+    }
+    void print_DB(void){
+        cout<<"Feet = "<<feet<<endl;
+        cout<<"Inches = "<<inch<<endl;
+    }
+};
+void add(DM a, DB b){
+    DM d;
+    int cm=(a.cm + a.m * 100 + b.feet * 30.48 + b.inch * 2.54);
+    if(cm >= 100){
+        d.m = cm / 100;
+        d.cm = cm % 100;
+    }
+    else{
+        d.m = 0;
+        d.cm = cm;
+    }
+    d.print_DM();
+}
+int main(void){
+    DM ob1;
+    DB ob2;
+    ob1.get_DM();
+    ob2.get_DB();
+    add(ob1,ob2);
+    return 0;
+}
