@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+class vehicle{
+public:
+    vehicle(){
+        cout << "This is a BEAST car" << endl;
+    }
+};
+class Car : public vehicle{
+public:
+    Car(){
+        cout << "MUSTANG 1969 " << endl;
+    }
+};
+class Colour{
+public:
+    Colour(){
+        cout << "Metallic Black"<<endl;
+    }
+};
+class Engine : public Car, public Colour{
+public:
+    Engine(){
+        cout << "Turbo Engine V8 ";
+    }
+};
+int main(){
+    Engine r;
+    return 0;
+}
