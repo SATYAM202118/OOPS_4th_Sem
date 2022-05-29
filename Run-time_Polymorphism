@@ -1,0 +1,29 @@
+// Calculating area using Virtual function
+#include <bits/stdc++.h>
+using namespace std;
+
+class Shape{    //Base class
+public:
+    virtual void cal(){         // Virtual function
+        cout << "Area of your Shape ";
+    }
+};
+
+class Rect : public Shape{      // Derived class
+public:
+    int l, b, ar;
+    void cal(){
+        cout << "Enter the length and breath of Rectangle: "<<endl;
+        cin >> l >> b;
+        ar = l * b;
+        cout << "Area of Rectangle is: " << ar << endl;
+    }
+};
+
+int main(){
+    Shape *S;   // Base class pointer
+    Rect r;
+    S = &r;     //reference variable
+    S->cal();
+    return 0;
+}
