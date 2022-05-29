@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+class Base{       //Base class
+public:
+    Base(){
+        cout << "Base class is called." << endl;
+    }
+};
+
+class Derived_1 :  public Base {
+// Derived from Base
+};
+
+class Derived_2 : public Derived_1 {
+// Derived from derived_1
+};
+
+int main(){
+    Derived_2 d;
+    return 0;
+}
