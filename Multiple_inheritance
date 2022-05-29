@@ -1,22 +1,33 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-
-class Base1{       //Base class
+class Base_1{       // Base class
 public:
-    Base1(){
-        cout << "First Base class is called." << endl;
+    int x;
+    void getx(){
+        cout << "Enter the first value : ";
+        cin >> x;
     }
 };
-class Base2{        //Base class
+class Base_2{       // Base class
 public:
-    Base2(){
-        cout << "Second Base class is called." << endl;
+    int y;
+    void gety(){
+        cout << "Enter the second value : ";
+        cin >> y;
     }
 };
-// Derived class
-class Derived : public Base1, public Base2 {};
+//Derived class is derived from base class Base_1 and Base_2
+class Derived : public Base_1, public Base_2 {
+public:
+    void Add(){
+        cout << "The Sum is : " << x + y;
+    }
+};
 
 int main(){
-    Derived d;
+    Derived d; // object of derived class
+    d.getx();
+    d.gety();
+    d.Add();
     return 0;
 }
