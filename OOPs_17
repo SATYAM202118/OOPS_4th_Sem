@@ -1,0 +1,59 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Shape{
+    protected:
+        int sides;
+    public:
+        void setSide(int sides){ // Getter
+            this->sides=sides;
+        }
+        int getside(){  // Setter
+            return sides;
+        }
+
+        Shape(){
+            this->sides=0;
+        }
+        virtual void No_Sides() = 0 ;     // Virtual Function
+};
+class Trapezoid : public Shape{
+    public:
+        Trapezoid(int sides){
+            this->sides=sides;
+        }
+
+        void No_Sides(){
+            cout<<"The sides of Trapezoid is : "<<this->sides<<endl;
+        }
+};
+class Triangle : public Shape{
+    public:
+        Triangle(int sides){
+            this->sides=sides;
+        }
+
+        void No_Sides(){
+            cout<<"The sides of Triangle is : "<<this->sides<<endl;
+        }
+};
+class Hexagon : public Shape{
+    public:
+        Hexagon(int sides){
+            this->sides=sides;
+        }
+        void No_Sides(){
+            cout<<"The sides of Hexagon is : "<<this->sides<<endl;
+        }
+};
+
+int main(){
+    Trapezoid Trap(4);
+    Triangle Tri(3);
+    Hexagon Hexa(6);
+
+    Trap.No_Sides();
+    Tri.No_Sides();
+    Hexa.No_Sides();
+    return 0;
+}
